@@ -1,0 +1,15 @@
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+mat-card {
+  width: 20em;
+  flex: 0 0 20em;
+}
+.example-full-width {
+  width: 100%;
+}
