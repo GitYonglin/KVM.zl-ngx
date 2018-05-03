@@ -1,16 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ElectronService } from 'ngx-electron';
+import { Observable } from 'rxjs/Observable';
+import { Store, select } from '@ngrx/store';
+
+interface LoginState {
+  state: boolean;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
-  title = 'app';
-  msg = 0;
-  constructor( private _http: Http, private _electronService: ElectronService) {
+  loginState: any;
+
+  constructor( private _http: Http,
+    private _electronService: ElectronService,
+    private _loginState: Store<boolean>
+  ) {
+    this.loginState = _loginState.pipe(select('login'));
+    console.log(_loginState.pipe(select('login')));
   }
 
   ngOnInit() {

@@ -1,0 +1,77 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  .header {
+    height: 55px;
+    border-bottom: 1px solid #EEE;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    button{
+      flex-grow: 1;
+      min-width: auto;
+      height: 100%;
+    }
+  }
+  .main {
+    flex: 1;
+  }
+  .footer {
+    height: 55px;
+    border-top: 1px solid #EEE;
+  }
+}
+
+ul {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 55px;
+  padding: 0 5px;
+  border-bottom: 1px solid #EEE;
+  .text-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .img {
+      height: 36px;
+      width: 36px;
+    }
+    h3 {
+      padding: 0 5px;
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .icon {
+    transform-origin:center center; //旋转中心要是正中间 才行
+    transition: transform .5s;
+    transform: rotate(0deg);
+    &.transform {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.item {
+  // max-height: calc(100);
+  flex: 1;
+  overflow-y: auto;
+  li {
+    padding: 0 10px;
+    font-size: 18px;
+    height: 36px;
+    border-bottom: 1px solid #EEE;
+    line-height: 36px;
+  }
+}

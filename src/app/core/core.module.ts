@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../shared/shared.module';
 
 import { AppRoutingModule } from '../app.routing';
+import { AppStateModule } from '../app.state';
 
 // svg使用依赖
 import { loadSvgResources } from '../utils/svg.utils';
@@ -12,12 +13,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import 'rxjs/add/operator/take';
+import { MenuModule } from '../menu/menu.module';
 
 @NgModule({
   imports: [
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
+    AppStateModule,
+    MenuModule,
     // BrowserAnimationsModule,
   ],
   declarations: [

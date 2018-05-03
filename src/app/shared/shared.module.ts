@@ -18,10 +18,16 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatPaginatorModule,
+  MatButtonToggleModule,
+  MatChipsModule,
+  MatProgressSpinnerModule,
+  MatProgressBarModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [
@@ -46,6 +52,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   exports: [
     CommonModule,
@@ -69,13 +79,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MenuComponent,
+    HeaderComponent,
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   declarations: [
     // ConfirmDialogComponent,
     // ImageListSelectComponent,
+    MenuComponent,
+    HeaderComponent,
   ],
   entryComponents: [
-    // ConfirmDialogComponent,
   ]
 })
 export class SharedModule { }

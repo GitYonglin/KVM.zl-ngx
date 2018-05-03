@@ -1,0 +1,21 @@
+mat-icon{
+  height: 96px;
+  width: 96px;
+}
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .operation {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 24px;
+  }
+  .menu {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    h3 {
+      text-align: center;
+    }
+  }
+}

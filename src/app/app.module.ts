@@ -8,6 +8,12 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
+import { MenuModule } from './menu/menu.module';
+import { ProjectModule } from './project/project.module';
+import { TaskModule } from './task/task.module';
+import { ComponentModule } from './component/component.module';
+import { DeviceModule } from './device/device.module';
+import { ProjectService } from './project/project.service';
 
 @NgModule({
   declarations: [
@@ -20,8 +26,14 @@ import { LoginModule } from './login/login.module';
     SharedModule,
     CoreModule,
     LoginModule,
+    ProjectModule,
+    TaskModule,
+    ComponentModule,
+    DeviceModule,
   ],
-  providers: [],
+  providers: [
+    ProjectService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

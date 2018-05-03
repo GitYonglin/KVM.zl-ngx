@@ -1,0 +1,53 @@
+<div class="content">
+  <div class="header">
+      <button mat-raised-button color="primary">添加</button>
+      <button mat-raised-button color="accent">修改</button>
+      <button mat-raised-button color="warn">删除</button>
+      <button mat-raised-button >
+        <mat-icon>cloud_download</mat-icon>
+      </button>
+  </div>
+  <div class="main">
+    <ng-container *ngIf="menus; else elseBlock" >
+      <div  [ngStyle]="{'height': bridgeState && indexActive === i ? '100%' : 'auto'}" *ngFor="let item of menus; index as i">
+        <ul *ngIf="!bridgeState || (indexActive === i || indexActive === -1)">
+          <div class="title" (click)="onClick(i, item.id)">
+            <div class="text-img">
+              <mat-icon class="img" [svgIcon]="item.icon"></mat-icon>
+              <h3>{{item.name}}</h3>
+            </div>
+            <div class="right" *ngIf="bridgeState">
+              <mat-chip-list>
+                <mat-chip color="primary" selected="true">{{item.bridge.length}}</mat-chip>
+              </mat-chip-list>
+              <mat-icon class="icon" [ngClass]="{'transform': indexActive === i}">keyboard_arrow_up</mat-icon>
+            </div>
+          </div>
+          <div [@list]="item.bridge.length" class="item" *ngIf="bridgeState && indexActive === i" >
+            <li  *ngFor="let bridge of item.bridge" (click)="onBridge(bridge.id)">
+              <span mat-line>{{bridge.name}}</span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </ng-container>
+    <ng-template #elseBlock>
+      <div class="title">
+        <h3>
+          没有数据
+        </h3>
+      </div>
+    </ng-template>
+    <div class="title" *ngIf="menus && menus.length === 0;">
+      <span>加载中...</span>
+      <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+      <!-- <mat-spinner></mat-spinner> -->
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </div>
+  </div>
+  <div class="footer">
+    <button mat-fab (click)="appMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</div>
