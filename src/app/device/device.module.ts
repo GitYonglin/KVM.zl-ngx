@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DeviceComponent } from './device.component';
 import { SharedModule } from '../shared/shared.module';
 import { DeviceRoutingModule } from './device.routing';
+import { FormControlComponent } from '../dynamic-form/form-control.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,9 @@ import { DeviceRoutingModule } from './device.routing';
     SharedModule,
     DeviceRoutingModule,
   ],
-  declarations: [DeviceComponent]
+  declarations: [
+    DeviceComponent,
+    FormControlComponent
+  ]
 })
 export class DeviceModule { }

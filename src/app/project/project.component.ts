@@ -9,6 +9,36 @@ import { ProjectService } from './project.service';
 })
 export class ProjectComponent implements OnInit {
   menus$: MenuData[];
+  title = '项目';
+  operator = [
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+    {
+      name: '操作员1',
+    },
+  ];
 
   constructor(private _service: ProjectService ) {
     this.menus$ = [];
@@ -21,4 +51,7 @@ export class ProjectComponent implements OnInit {
     });
   }
 
+  onOther(id: string, name: string) {
+    alert(id);
+  }
 }

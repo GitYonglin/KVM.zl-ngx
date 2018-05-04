@@ -1,0 +1,5 @@
+<mat-form-field class="example-full-width" [formGroup]="form">
+  <span matPrefix>&nbsp; {{field.matPrefix}} &nbsp;</span>
+  <input matInput [type]="field.type" [formControlName]="field.key">
+  <mat-error *ngIf="error">{{error}}</mat-error>
+</mat-form-field>

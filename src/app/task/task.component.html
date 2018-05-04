@@ -1,13 +1,17 @@
 <mat-drawer-container class="content">
   <mat-drawer #menu mode="side" opened="true">
-    <app-menu [menus]="menus"></app-menu>
+    <app-menu [menus]="menus$"></app-menu>
   </mat-drawer>
   <div class="main">
     <header>
-      <app-header></app-header>
+      <h2>{{title}}</h2>
+      <div>
+        <button mat-raised-button color="primary">添加</button>
+        <button mat-raised-button color="accent">修改</button>
+        <button mat-raised-button color="warn">删除</button>
+      </div>
     </header>
     <main>
-      <ng-content></ng-content>
     </main>
   </div>
 </mat-drawer-container>

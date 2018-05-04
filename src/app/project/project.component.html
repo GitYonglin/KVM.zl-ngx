@@ -4,10 +4,118 @@
   </mat-drawer>
   <div class="main">
     <header>
-      <app-header></app-header>
+      <h2>{{title}}</h2>
+      <div>
+        <button mat-raised-button color="primary">添加</button>
+        <button mat-raised-button color="accent">修改</button>
+        <button mat-raised-button color="warn">删除</button>
+      </div>
     </header>
     <main>
-      <ng-content></ng-content>
+      <form>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>&nbsp; 项目名称 &nbsp;</span>
+          <input matInput type="text">
+          <!-- <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>&nbsp; 分布工程 &nbsp;</span>
+          <input matInput type="text">
+          <!-- <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>&nbsp; 施工单位 &nbsp;</span>
+          <input matInput type="text">
+          <!-- <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>&nbsp; 单位工程 &nbsp;</span>
+          <input matInput type="text">
+          <!-- <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>&nbsp; 工程部位 &nbsp;</span>
+          <input matInput type="text">
+          <!-- <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>&nbsp; 合同段 &nbsp;</span>
+          <input matInput type="text">
+          <!-- <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>&nbsp; 桩号范围 &nbsp;</span>
+          <input matInput type="text">
+          <!-- <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error> -->
+        </mat-form-field>
+        <!-- <div>
+          <button mat-raised-button color="primary" (click)="onLogin()"></button>
+          <button mat-raised-button color="primary" (click)="onOut()">退出</button>
+        </div> -->
+      </form>
+      <div class="other">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title><h3>操作员</h3></mat-card-title>
+            <div>
+              <button mat-raised-button>添加</button>
+            </div>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              <li *ngFor="let item of operator" (click)="onOther('operator', item.name)">
+                <div>{{item.name}}</div>
+                <div>
+                  <button mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-header>
+              <mat-card-title><h3>监理</h3></mat-card-title>
+            <div>
+              <button mat-raised-button>添加</button>
+            </div>
+          </mat-card-header>
+          <mat-card-content>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-header>
+              <mat-card-title><h3>钢绞线</h3></mat-card-title>
+            <div>
+              <button mat-raised-button>添加</button>
+            </div>
+          </mat-card-header>
+          <mat-card-content>
+          </mat-card-content>
+        </mat-card>
+        <!-- <div>
+            <h3>操作员</h3>
+          </div>
+          <div>
+            <h3>监理</h3>
+          </div>
+          <div>
+            <h3>钢绞线</h3>
+          </div> -->
+      </div>
     </main>
   </div>
 </mat-drawer-container>
+<!-- sProjectName: string;   // 项目名称
+  sDivisionProject: string; // 分布工程
+  sConstructionUnit: string;  // 施工单位
+  sSubProject: string; // 分项工程
+  sUnitProject: string; // 单位工程
+  sEngineeringSite: string; // 工程部位
+  // sSupervisionUnit: string; // 监理单位
+  sContractSection: string; // 合同段
+  sStationRange: string; // 桩号范围
+  operator: Operator[]; // 操作员
+  supervision: Supervision[]; // 监理
+  steelStrand: SteelStrand[]; // 钢绞线 -->

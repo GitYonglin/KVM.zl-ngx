@@ -7,9 +7,11 @@ import { Menus as MenuData } from '../modules/leftMenu.module';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
-  menus: MenuData[];
+  menus$: MenuData[];
+  title = '任务';
+
   constructor() {
-    this.menus = [
+    this.menus$ = [
       {
         id: '1',
         name: 'T梁',

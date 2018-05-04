@@ -7,7 +7,7 @@
         <mat-icon>cloud_download</mat-icon>
       </button>
   </div>
-  <div class="main">
+  <div class="main" [ngStyle]="{'overflow-y': bridgeState ? 'hidden' : 'auto'}">
     <ng-container *ngIf="menus; else elseBlock" >
       <div  [ngStyle]="{'height': bridgeState && indexActive === i ? '100%' : 'auto'}" *ngFor="let item of menus; index as i">
         <ul *ngIf="!bridgeState || (indexActive === i || indexActive === -1)">

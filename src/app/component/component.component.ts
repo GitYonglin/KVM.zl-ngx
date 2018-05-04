@@ -7,10 +7,11 @@ import { Menus as MenuData } from '../modules/leftMenu.module';
   styleUrls: ['./component.component.scss']
 })
 export class ComponentComponent implements OnInit {
-  menus: MenuData[];
+  menus$: MenuData[];
+  title = '构件';
 
   constructor() {
-    this.menus = [
+    this.menus$ = [
       {
         id: '1',
         name: 'T梁',
